@@ -21,9 +21,9 @@ interface ManualProps {
 }
 
 export const ManualPage: React.FC<ManualProps> = ({ onNavigate }) => {
-  // Video link state with localStorage persistence so the teacher can update their link anytime
+  // Video link state with localStorage persistence and default fallback to your YouTube link
   const [videoUrl, setVideoUrl] = useState(() => {
-    return localStorage.getItem('jelajah_youtube_link') || '';
+    return localStorage.getItem('jelajah_youtube_link') || 'https://youtu.be/alJ6jvgArGw';
   });
   const [inputUrl, setInputUrl] = useState(videoUrl);
   const [showUrlEditor, setShowUrlEditor] = useState(false);
